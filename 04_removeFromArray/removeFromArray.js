@@ -1,15 +1,14 @@
 const removeFromArray = function(arrayElement,...value) {
-      newArrayElement = [];
-    for(let i=0; i<=arrayElement.length; i++){
-        if(value.includes(arrayElement[i])){
-         arrayElement.splice(i, value.length);
-        }
+const newArrayElement = arrayElement.filter(check);
+function check(arrayElement){
+    return !value.includes(arrayElement);
 }
 
 
-return arrayElement;
-// return console.log(arrayElement)
+
+return newArrayElement;
+// return console.log(newArrayElement)
 };
-// removeFromArray([1, 2, 3, 4], 7, 2);
+// removeFromArray([1, 2, 3], "1", 3);
 // Do not edit below this line
 module.exports = removeFromArray;
